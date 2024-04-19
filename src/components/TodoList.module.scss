@@ -1,0 +1,73 @@
+.btnsWrapper {
+	padding: 20px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+
+.todo {
+	display: flex;
+	gap: 30px;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 10px 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.todo:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.btn {
+	padding: 10px 22px;
+	border-radius: 4px;
+	border: none;
+	font-size: 1rem;
+	background-color: #fff;
+	color: #091ec2;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	border: 2px solid #091ec2;
+}
+
+.btn:hover {
+	background-color: #091ec2;
+	color: #fff;
+}
+
+.active {
+	background-color: #091ec2;
+	color: white;
+}
+
+.wrapper {
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	width: 70vw;
+	padding: 40px 20px;
+	margin: 0 auto;
+}
+
+.input {
+	width: 80%;
+	margin-right: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border: 1px solid #ccc;
+	outline: none;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 4px;
+}

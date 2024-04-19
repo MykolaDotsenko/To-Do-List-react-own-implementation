@@ -1,23 +1,18 @@
-import React, { useState } from "react";
+import { useState } from 'react'
+import s from './TodoList.module.scss'
 
 export const AddForm = ({ handleAddTodo }) => {
-  const [newTodoTitle, setNewTodoTitle] = useState("");
+	const [newTodoTitle, setNewTodoTitle] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleAddTodo(newTodoTitle);
-    console.log(newTodoTitle);
-    setNewTodoTitle("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        value={newTodoTitle}
-        onChange={(e) => setNewTodoTitle(e.target.value)}
-        type="text"
-      />
-      <button>Add todo</button>
-    </form>
-  );
-};
+	const handleSubmit = e => {
+		e.preventDefault()
+		handleAddTodo(newTodoTitle)
+		setNewTodoTitle('')
+	}
+	return (
+		<form className={s.form} onSubmit={handleSubmit}>
+			<input className={s.input} value={newTodoTitle} onChange={e => setNewTodoTitle(e.target.value)} type='text' />
+			<button className={s.btn}>Add todo</button>
+		</form>
+	)
+}
