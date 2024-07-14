@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AddForm } from './AddForm'
 import { List } from './List'
 import { Filter } from './Filter'
@@ -7,6 +7,19 @@ import { Filter } from './Filter'
 export const Todolist = () => {
 	const [todos, setTodos] = useState([])
 	const [activeFilter, setActiveFilter] = useState('all')
+
+	// Load todos from local storage when the component mounts
+	useEffect(() => {
+		const storedTodos = JSON.parse(localStorage.getItem('todos'))
+		if (storedTodos) {
+			setTodos(storedTodos)
+		}
+	}, [])
+
+	// Save todos to local storage whenever they change
+	useEffect(() => {
+		localStorage.setItem('todos', JSON.stringify(todos))
+	}, [todos])
 
 	const getFilteredData = () => {
 		switch (activeFilter) {
@@ -40,7 +53,7 @@ export const Todolist = () => {
 	}
 
 	const handleUpdateText = id => {
-		setTodos(prev => prev.map(item => (item.id === id ? { ...item, title: 'React is simple!' } : item)))
+		setTodos(prev => prev.map(item => (item.id === id ? { ...item, title: 'Cancel' } : item)))
 	}
 
 	const filteredData = getFilteredData()
