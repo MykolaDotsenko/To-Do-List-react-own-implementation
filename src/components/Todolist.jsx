@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { FiCheck, FiCommand, FiRotateCcw, FiTrash2 } from 'react-icons/fi'
 import { AddForm } from './AddForm'
@@ -42,7 +42,7 @@ export const Todolist = () => {
     completed: tasks.filter((task) => task.completed).length,
   }), [tasks])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setStorageHealthy(saveTasks(tasks))
   }, [tasks])
 
