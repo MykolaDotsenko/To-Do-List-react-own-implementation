@@ -12,15 +12,21 @@ function parseTasks(value) {
     .filter(Boolean)
 }
 
-export function loadTasks(storage = window.localStorage) {
+function resolveStorage(storage) {
+  return storage ?? window.localStorage
+}
+
+export function loadTasks(storage) {
   try {
-    const stored = storage.getItem(STORAGE_KEY)
+    const target = resolveStorage(storage)
+    const stored = target.getItem(STORAGE_KEY)
+
     if (stored) {
       const payload = JSON.parse(stored)
       if (payload?.version === STORAGE_VERSION) return parseTasks(payload.tasks)
     }
 
-    const legacy = storage.getItem(LEGACY_STORAGE_KEY)
+    const legacy = target.getItem(LEGACY_STORAGE_KEY)
     if (legacy) return parseTasks(JSON.parse(legacy))
   } catch {
     return []
@@ -29,9 +35,11 @@ export function loadTasks(storage = window.localStorage) {
   return []
 }
 
-export function saveTasks(tasks, storage = window.localStorage) {
+export function saveTasks(tasks, storage) {
   try {
-    storage.setItem(
+    const target = resolveStorage(storage)
+
+    target.setItem(
       STORAGE_KEY,
       JSON.stringify({
         version: STORAGE_VERSION,
@@ -39,6 +47,7 @@ export function saveTasks(tasks, storage = window.localStorage) {
         tasks,
       }),
     )
+
     return true
   } catch {
     return false
