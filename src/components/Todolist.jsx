@@ -46,7 +46,7 @@ export const Todolist = () => {
     setStorageHealthy(saveTasks(tasks))
   }, [tasks])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleShortcut = (event) => {
       const target = event.target
       const typing = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement
