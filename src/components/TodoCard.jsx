@@ -51,7 +51,6 @@ export const TodoCard = ({
           onChange={() => onToggleComplete(item.id)}
           aria-label={`Mark ${item.title} ${item.completed ? 'active' : 'complete'}`}
         />
-        <span aria-hidden="true" />
       </label>
 
       <div className={s.taskBody}>
