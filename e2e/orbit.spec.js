@@ -68,6 +68,23 @@ test('keyboard shortcuts move focus without hijacking text inputs', async ({ pag
   await expect(page.getByLabel('Search tasks')).toBeFocused()
 })
 
+test('blocked storage degrades to an explicit session-only experience', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(window, 'localStorage', {
+      configurable: true,
+      get() {
+        throw new DOMException('Storage blocked', 'SecurityError')
+      },
+    })
+  })
+
+  await page.reload()
+
+  await expect(page.getByText(/Browser storage is unavailable/)).toBeVisible()
+  await addTask(page, 'Session-only task')
+  await expect(page.getByText('Session-only task').first()).toBeVisible()
+})
+
 test('mobile workflow has no horizontal overflow and keeps thumb navigation visible', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('mobile'), 'Mobile-specific regression')
 
