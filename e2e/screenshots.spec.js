@@ -29,6 +29,8 @@ test('capture recruiter-facing screenshots', async ({ page }, testInfo) => {
   await seedTask(page, 'Explore next product idea', 60, false)
 
   await expect(page.getByText('Prepare launch narrative').first()).toBeVisible()
+  await page.evaluate(() => window.scrollTo(0, 0))
+  await page.waitForTimeout(100)
 
   const filename =
     testInfo.project.name === 'chromium'
