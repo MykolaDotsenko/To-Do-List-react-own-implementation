@@ -32,7 +32,7 @@ test('reduced motion still preserves complete product behavior', async ({ page }
 
   await page.getByLabel('New task').fill('Reduced motion task')
   await page.getByRole('button', { name: 'Add to orbit' }).click()
-  await page.getByRole('checkbox', { name: /Mark Reduced motion task complete/ }).check()
+  await page.getByRole('checkbox', { name: /Mark Reduced motion task complete/ }).click()
 
   await expect(page.getByRole('button', { name: 'Done' })).toContainText('1')
 })
