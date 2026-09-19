@@ -63,8 +63,7 @@ test('keyboard shortcuts move focus without hijacking text inputs', async ({ pag
   await page.getByLabel('New task').fill('n stays text here')
   await expect(page.getByLabel('New task')).toHaveValue('n stays text here')
 
-  await page.getByLabel('New task').press('Escape')
-  await page.getByRole('heading', { name: 'Make today feel lighter.' }).click()
+  await page.getByRole('link', { name: 'Orbit home' }).click()
   await page.keyboard.press('/')
   await expect(page.getByLabel('Search tasks')).toBeFocused()
 })
