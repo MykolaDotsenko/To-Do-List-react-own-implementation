@@ -540,45 +540,43 @@
 .taskCardCompleted .taskTitle { text-decoration: line-through; color: #8891a5; }
 
 .checkControl {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-
-.checkControl input {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-  margin: 0;
-  opacity: 0;
-}
-
-.checkControl span {
   display: grid;
   width: 24px;
   height: 24px;
   place-items: center;
-  border: 1.7px solid #a5aec0;
-  border-radius: 8px;
-  background: #fff;
-  transition: .2s ease;
 }
 
-.checkControl input:checked + span {
+.checkControl input {
+  appearance: none;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  place-items: center;
+  border: 1.7px solid #8994aa;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.checkControl input::after {
+  content: "";
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+.checkControl input:checked {
   border-color: transparent;
   background: linear-gradient(135deg, #5a5def, #7d60ee);
   box-shadow: 0 6px 14px rgba(91,93,247,.2);
 }
 
-.checkControl input:checked + span::after {
-  content: "";
-  width: 8px;
-  height: 4px;
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  transform: rotate(-45deg) translateY(-1px);
+.checkControl input:checked::after {
+  border-color: #fff;
 }
 
 .taskBody { min-width: 0; }
