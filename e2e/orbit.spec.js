@@ -1,8 +1,9 @@
 import { expect, test } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
-  await page.addInitScript(() => window.localStorage.clear())
   await page.goto('/')
+  await page.evaluate(() => window.localStorage.clear())
+  await page.reload()
 })
 
 async function addTask(page, title, { bucket = 'today', estimate = '15' } = {}) {
@@ -27,7 +28,7 @@ test('capture → Top 3 → complete → reopen keeps the workflow coherent', as
   await page.getByRole('button', { name: 'Done' }).click()
   await expect(page.getByText('Ship portfolio case study').first()).toBeVisible()
 
-  await page.getByRole('checkbox', { name: /Mark Ship portfolio case study active/ }).check()
+  await page.getByRole('checkbox', { name: /Mark Ship portfolio case study active/ }).click()
   await expect(page.getByRole('button', { name: 'Today' })).toContainText('1')
 })
 
@@ -88,12 +89,13 @@ test('blocked storage degrades to an explicit session-only experience', async ({
 test('mobile workflow has no horizontal overflow and keeps thumb navigation visible', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('mobile'), 'Mobile-specific regression')
 
-  await expect(page.getByRole('navigation', { name: 'Mobile task views' })).toBeVisible()
+  const mobileNav = page.getByRole('navigation', { name: 'Mobile task views' })
+  await expect(mobileNav).toBeVisible()
   await addTask(page, 'Mobile-first task', { estimate: '5' })
 
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
   expect(overflow).toBeLessThanOrEqual(1)
 
-  await page.getByRole('button', { name: 'Top 3' }).click()
+  await mobileNav.getByRole('button', { name: /Top 3$/ }).click()
   await expect(page.getByText('Nothing is asking for attention here.')).toBeVisible()
 })
