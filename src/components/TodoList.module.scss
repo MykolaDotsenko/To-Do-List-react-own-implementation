@@ -2164,3 +2164,406 @@
       #fffdf8;
   }
 }
+
+
+/* 90s home retro layer — colourful appliance plastic, paper tabs and stronger states. */
+
+.appShell {
+  padding-bottom: 56px;
+}
+
+.topbar {
+  border-bottom: 2px solid var(--ink);
+  background: #fff7e8;
+  box-shadow: 0 3px 0 rgba(42, 48, 44, .06);
+}
+
+.topbar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 112px;
+  height: 5px;
+  background:
+    linear-gradient(
+      90deg,
+      #e36f54 0 25%,
+      #f4c95d 25% 50%,
+      #78a9bc 50% 75%,
+      #7fa47d 75% 100%
+    );
+}
+
+.brandMark {
+  border-width: 2px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.brandMark span {
+  width: 6px;
+  height: 6px;
+}
+
+.sidebar {
+  border-right: 2px dashed #9c8d7f;
+}
+
+.navLabel {
+  color: #655e56;
+}
+
+.sidebarNav {
+  gap: 7px;
+}
+
+.navButton {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1.5px solid #6f6a62;
+  border-left-width: 1.5px;
+  border-radius: 7px;
+  background: #fffaf0;
+  color: #343a36;
+  box-shadow: 2px 2px 0 rgba(36, 48, 44, .20);
+}
+
+.navButton:hover {
+  border-left-color: #6f6a62;
+  background: #fff2cf;
+  color: var(--ink);
+  box-shadow: 3px 3px 0 rgba(36, 48, 44, .24);
+}
+
+.navButtonActive {
+  border: 2px solid var(--ink);
+  color: #202522;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.sidebarNav .navButton:nth-of-type(1).navButtonActive {
+  background: #f7d86f;
+}
+
+.sidebarNav .navButton:nth-of-type(2).navButtonActive {
+  background: #e5a5b9;
+}
+
+.sidebarNav .navButton:nth-of-type(3).navButtonActive {
+  background: #9fcfdf;
+}
+
+.sidebarNav .navButton:nth-of-type(4).navButtonActive {
+  background: #a9c9a4;
+}
+
+.navCount {
+  color: #303631;
+  font-weight: 800;
+}
+
+.searchBox {
+  border: 2px solid #777168;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow:
+    inset 2px 2px 0 rgba(78, 66, 52, .08),
+    2px 2px 0 rgba(36, 48, 44, .12);
+}
+
+.searchBox:focus-within {
+  border-color: #3d5660;
+  box-shadow:
+    inset 2px 2px 0 rgba(78, 66, 52, .06),
+    3px 3px 0 #9fcfdf;
+}
+
+.searchBox kbd,
+.sidebarFooter kbd,
+.shortcut {
+  border: 1.5px solid #756f66;
+  border-radius: 5px;
+  background: #f5eddc;
+  box-shadow: 1px 1px 0 rgba(36, 48, 44, .20);
+  color: #313733;
+}
+
+.hero {
+  border: 2px solid #6b665e;
+  box-shadow:
+    5px 5px 0 rgba(64, 59, 52, .16),
+    9px 9px 0 rgba(244, 201, 93, .18);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  width: 38px;
+  height: 10px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e36f54 0 7px,
+      transparent 7px 10px
+    );
+  opacity: .72;
+}
+
+.heroStats article {
+  border-bottom: 1.5px dashed #938c7f;
+}
+
+.captureCard {
+  border: 2px solid #8a7960;
+  box-shadow:
+    4px 4px 0 rgba(74, 62, 47, .13),
+    8px 8px 0 rgba(244, 201, 93, .12);
+}
+
+.captureInputWrap {
+  border: 2px solid #887d6d;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 0 rgba(92, 73, 49, .08);
+}
+
+.captureInputWrap:focus-within {
+  border-color: var(--ink);
+  box-shadow:
+    inset 4px 0 0 var(--accent),
+    3px 3px 0 #9fcfdf;
+}
+
+.compactField {
+  border: 1.5px solid #7a7369;
+  border-style: solid;
+  border-radius: 7px;
+  background: #fffdf7;
+  box-shadow: inset 1px 1px 0 rgba(62, 54, 44, .06);
+}
+
+.compactField:nth-child(1) {
+  background: #e6f2f6;
+}
+
+.compactField:nth-child(2) {
+  background: #eef4df;
+}
+
+.primaryButton,
+.focusAction,
+.ghostButton {
+  border: 2px solid var(--ink);
+  border-radius: 7px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.primaryButton {
+  background: #ef7557;
+  color: #fffdf9;
+}
+
+.primaryButton:not(:disabled):hover {
+  background: #d85d42;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.primaryButton:disabled {
+  border-color: #9d978d;
+  background: #d8d2c9;
+  color: #817d76;
+  box-shadow: 2px 2px 0 #a8a39b;
+  opacity: 1;
+}
+
+.listSection {
+  border: 2px solid #7c7770;
+  box-shadow:
+    4px 5px 0 rgba(42, 48, 44, .11),
+    8px 9px 0 rgba(147, 197, 216, .12);
+}
+
+.taskCard {
+  border-bottom: 1.5px dotted rgba(91, 98, 93, .24);
+}
+
+.taskCard:hover {
+  background: rgba(255, 243, 200, .38);
+}
+
+.taskCardFocus {
+  background: #f8e2e9;
+  box-shadow: inset 6px 0 0 #c77c94;
+}
+
+.checkControl input {
+  border: 2px solid #68645e;
+  box-shadow: 1px 1px 0 rgba(42, 48, 44, .16);
+}
+
+.checkControl input:checked {
+  border-color: #26312d;
+  background: #5d8f75;
+}
+
+.iconButton,
+.iconButtonActive {
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+
+.iconButton:hover {
+  border-color: #81796f;
+  background: #f7d86f;
+  color: #252a27;
+  box-shadow: 2px 2px 0 rgba(36, 48, 44, .17);
+}
+
+.iconButtonActive {
+  border-color: #7e5764;
+  background: #e5a5b9;
+  color: #4c2e37;
+  box-shadow: 2px 2px 0 rgba(76, 46, 55, .28);
+}
+
+.dangerButton:hover {
+  border-color: #9f4c47;
+  background: #f0a29b;
+  color: #6d2722;
+}
+
+.focusPanel {
+  border: 2px solid #5e705f;
+  box-shadow:
+    5px 6px 0 rgba(53, 74, 62, .20),
+    9px 10px 0 rgba(158, 190, 154, .14);
+}
+
+.focusPanel::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  top: 52%;
+  width: 12px;
+  height: 30px;
+  border: 2px solid #6f866f;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  opacity: .5;
+}
+
+.progressOrb {
+  border: 2px solid #617263;
+  box-shadow: 2px 2px 0 rgba(51, 71, 59, .18);
+}
+
+.focusAction {
+  background: #315848;
+  color: #fff;
+}
+
+.focusAction:hover {
+  background: #244b3c;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.toast {
+  border: 2px solid #1e2421;
+  border-radius: 7px;
+  box-shadow: 4px 4px 0 #1e2421;
+}
+
+.toast button {
+  border: 1.5px solid #f2d46e;
+  border-radius: 5px;
+  background: #f7d86f;
+  color: #2e312e;
+}
+
+.mobileNav {
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.mobileNav button {
+  border-right: 2px solid var(--ink);
+  color: #2d332f;
+  font-weight: 800;
+}
+
+.mobileNav button:nth-child(1) {
+  background: #fff0ae;
+}
+
+.mobileNav button:nth-child(2) {
+  background: #f3c2d0;
+}
+
+.mobileNav button:nth-child(3) {
+  background: #c6e5ef;
+}
+
+.mobileNav button:nth-child(4) {
+  background: #cae0c5;
+}
+
+.mobileNav .mobileNavActive {
+  background: #263b35;
+  color: #fff;
+  box-shadow: inset 0 4px 0 #f4c95d;
+}
+
+.mobileNav .mobileNavActive span {
+  color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navButton:hover,
+  .primaryButton:not(:disabled):hover,
+  .focusAction:hover,
+  .ghostButton:hover,
+  .iconButton:hover,
+  .iconButtonActive:hover {
+    transform: translate(-1px, -1px);
+  }
+
+  .navButton:active,
+  .primaryButton:active,
+  .focusAction:active,
+  .ghostButton:active,
+  .iconButton:active,
+  .iconButtonActive:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+}
+
+@media (max-width: 840px) {
+  .hero {
+    border-radius: 8px;
+  }
+
+  .focusPanel {
+    border-radius: 8px;
+  }
+}
+
+@media (forced-colors: active) {
+  .topbar::after,
+  .hero::after,
+  .focusPanel::after {
+    display: none;
+  }
+
+  .navButton,
+  .primaryButton,
+  .focusAction,
+  .ghostButton,
+  .mobileNav {
+    box-shadow: none;
+  }
+}
