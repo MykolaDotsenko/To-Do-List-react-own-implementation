@@ -19,7 +19,7 @@ test('initial product surface has no automatically detectable WCAG A/AA violatio
 
 test('populated and focused task state stays accessible', async ({ page }) => {
   await page.getByLabel('New task').fill('Accessible focus task')
-  await page.getByRole('button', { name: 'Add to orbit' }).click()
+  await page.getByRole('button', { name: 'Keep this' }).click()
   await page.getByRole('button', { name: 'Add Accessible focus task to Top 3' }).click()
 
   const results = await scan(page)
@@ -31,7 +31,7 @@ test('reduced motion still preserves complete product behavior', async ({ page }
   await page.reload()
 
   await page.getByLabel('New task').fill('Reduced motion task')
-  await page.getByRole('button', { name: 'Add to orbit' }).click()
+  await page.getByRole('button', { name: 'Keep this' }).click()
   await page.getByRole('checkbox', { name: /Mark Reduced motion task complete/ }).click()
 
   await expect(page.getByRole('button', { name: 'Done' })).toContainText('1')
