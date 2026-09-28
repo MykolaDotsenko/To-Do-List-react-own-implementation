@@ -4,6 +4,10 @@ Orbit is a small React workspace for deciding **what matters today**, not for ma
 
 [**Live demo**](https://orbit-daily-focus.vercel.app/) · [Architecture notes](./ARCHITECTURE.md)
 
+![Orbit — warm home retro 90s daily planner](./docs/screenshots/orbit-home.png)
+
+*Today, Top 3, local-first state and the home-planner interface in one view.*
+
 The core loop is simple:
 
 ```text
