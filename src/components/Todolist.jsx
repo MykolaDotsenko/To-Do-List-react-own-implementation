@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { nanoid } from 'nanoid'
-import { FiCheck, FiCommand, FiRotateCcw, FiTrash2 } from 'react-icons/fi'
+import { FiCommand, FiRotateCcw, FiTrash2 } from 'react-icons/fi'
 import { AddForm } from './AddForm'
 import { Filter } from './Filter'
 import { FocusPanel } from './FocusPanel'
@@ -163,7 +163,7 @@ export const Todolist = () => {
 
           {!storageHealthy && (
             <div className={s.warningBanner} role="status">
-              Local storage is blocked. You can keep working, but these changes will disappear after a reload.
+              Local storage is blocked. Changes will be lost on reload.
             </div>
           )}
 
@@ -212,7 +212,7 @@ export const Todolist = () => {
 
       {undoTask && (
         <div className={s.toast} role="status">
-          <span><FiCheck aria-hidden="true" /> Deleted</span>
+          <span><FiTrash2 aria-hidden="true" /> Task deleted</span>
           <button type="button" onClick={handleUndo}><FiRotateCcw aria-hidden="true" /> Undo</button>
         </div>
       )}
