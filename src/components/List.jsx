@@ -3,10 +3,10 @@ import { TodoCard } from './TodoCard'
 import s from './TodoList.module.scss'
 
 const copy = {
-  today: ['Today', 'Keep the surface small. Finish what is already in orbit.'],
-  focus: ['Top 3', 'Three deliberate priorities beat a wall of urgency.'],
-  all: ['All tasks', 'Everything captured, without losing the signal.'],
-  completed: ['Completed', 'Proof that progress compounds.'],
+  today: ['Today', 'Tasks scheduled for today.'],
+  focus: ['Top 3', 'Your protected priorities.'],
+  all: ['All tasks', 'Everything you have captured.'],
+  completed: ['Done', 'Completed tasks.'],
 }
 
 export const List = ({ tasks, view, focusCount, onCaptureFocus, ...handlers }) => {
@@ -16,11 +16,11 @@ export const List = ({ tasks, view, focusCount, onCaptureFocus, ...handlers }) =
     <section className={s.listSection} aria-labelledby="task-list-title">
       <div className={s.listHeading}>
         <div>
-          <span className={s.eyebrow}>Task stream</span>
+          <span className={s.eyebrow}>List</span>
           <h2 id="task-list-title">{title}</h2>
           <p>{subtitle}</p>
         </div>
-        <span className={s.resultCount}>{tasks.length} visible</span>
+        <span className={s.resultCount}>{tasks.length} shown</span>
       </div>
 
       {tasks.length ? (
@@ -37,10 +37,10 @@ export const List = ({ tasks, view, focusCount, onCaptureFocus, ...handlers }) =
       ) : (
         <div className={s.emptyState}>
           <div className={s.emptyIcon}><FiCheckCircle aria-hidden="true" /></div>
-          <h3>Nothing is asking for attention here.</h3>
-          <p>Capture one meaningful next action instead of rebuilding a huge backlog.</p>
+          <h3>No tasks here.</h3>
+          <p>Add a task or switch to another view.</p>
           <button type="button" className={s.ghostButton} onClick={onCaptureFocus}>
-            Capture a task <FiArrowUpRight aria-hidden="true" />
+            Add a task <FiArrowUpRight aria-hidden="true" />
           </button>
         </div>
       )}
