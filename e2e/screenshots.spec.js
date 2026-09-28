@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test'
 
 async function seedTask(page, title, estimate, pin = false) {
   await page.getByLabel('New task').fill(title)
-  await page.getByLabel(/Effort/).selectOption(String(estimate))
-  await page.getByRole('button', { name: 'Add to orbit' }).click()
+  await page.getByLabel('Time').selectOption(String(estimate))
+  await page.getByRole('button', { name: 'Keep this' }).click()
 
   if (pin) {
     await page.getByRole('button', { name: `Add ${title} to Top 3` }).click()
