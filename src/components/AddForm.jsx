@@ -28,8 +28,8 @@ export const AddForm = ({ onAdd, inputRef }) => {
     <section className={s.captureCard} aria-labelledby="capture-title">
       <div className={s.captureHeading}>
         <div>
-          <span className={s.eyebrow}>Quick capture</span>
-          <h2 id="capture-title">Clear your head in one line.</h2>
+          <span className={s.eyebrow}>New task</span>
+          <h2 id="capture-title">Write it down.</h2>
         </div>
         <span className={s.shortcut} aria-hidden="true">N</span>
       </div>
@@ -43,7 +43,7 @@ export const AddForm = ({ onAdd, inputRef }) => {
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             maxLength={160}
-            placeholder="What deserves your attention?"
+            placeholder="Task name"
             aria-label="New task"
             autoComplete="off"
           />
@@ -60,7 +60,7 @@ export const AddForm = ({ onAdd, inputRef }) => {
           </label>
 
           <label className={s.compactField}>
-            <span className={s.inlineLabel}><FiClock aria-hidden="true" /> Effort</span>
+            <span className={s.inlineLabel}><FiClock aria-hidden="true" /> Time</span>
             <select value={estimate} onChange={(event) => setEstimate(Number(event.target.value))}>
               {estimateOptions.map((minutes) => (
                 <option key={minutes} value={minutes}>{minutes} min</option>
@@ -69,7 +69,7 @@ export const AddForm = ({ onAdd, inputRef }) => {
           </label>
 
           <button className={s.primaryButton} type="submit" disabled={!title.trim()}>
-            Add to orbit
+            Add task
             <FiArrowUpRight aria-hidden="true" />
           </button>
         </div>
