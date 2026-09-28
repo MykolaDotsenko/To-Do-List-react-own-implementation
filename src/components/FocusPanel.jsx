@@ -26,14 +26,14 @@ export const FocusPanel = ({ stack, progress, onComplete, onOpenFocus }) => {
           </div>
 
           <button type="button" className={s.focusAction} onClick={() => onComplete(next.id)}>
-            Done — next <FiCheck aria-hidden="true" />
+            Mark done <FiCheck aria-hidden="true" />
           </button>
         </>
       ) : (
         <div className={s.focusEmpty}>
           <FiStar aria-hidden="true" />
-          <strong>No focus tasks yet.</strong>
-          <p>Star up to three tasks to keep them here.</p>
+          <strong>Top 3 is empty.</strong>
+          <p>Star up to three tasks. They stay here until you finish or remove them.</p>
           <button type="button" onClick={onOpenFocus}>Open all tasks <FiArrowRight aria-hidden="true" /></button>
         </div>
       )}
@@ -50,7 +50,7 @@ export const FocusPanel = ({ stack, progress, onComplete, onOpenFocus }) => {
       )}
 
       <div className={s.focusHint}>
-        <span>3 slots maximum.</span>
+        <span>Three slots, no overflow.</span>
         <span>Finish or remove one before adding another.</span>
       </div>
     </aside>
