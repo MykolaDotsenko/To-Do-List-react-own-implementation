@@ -106,7 +106,7 @@ export const Todolist = () => {
       <header className={s.topbar}>
         <a className={s.brand} href="#main-content" aria-label="Orbit home">
           <span className={s.brandMark} aria-hidden="true"><span /></span>
-          <span><strong>Orbit</strong><small>daily focus</small></span>
+          <span><strong>Orbit</strong><small>today, at home</small></span>
         </a>
         <div className={s.topbarMeta}>
           <span>{formattedDate}</span>
@@ -117,9 +117,9 @@ export const Todolist = () => {
       <div className={s.layout}>
         <aside className={s.sidebar}>
           <div className={s.sidebarIntro}>
-            <span className={s.eyebrow}>Today</span>
-            <h1>Three things in front of you.</h1>
-            <p>Keep everything else close, but out of the way.</p>
+            <span className={s.eyebrow}>A small plan</span>
+            <h1>Keep today within reach.</h1>
+            <p>Three priorities on the table. Everything else can wait nearby.</p>
           </div>
 
           <Filter
@@ -140,9 +140,9 @@ export const Todolist = () => {
         <main id="main-content" className={s.mainColumn}>
           <section className={s.hero}>
             <div>
-              <span className={s.heroKicker}>Daily sheet</span>
-              <h2>Pick three. <em>Do one.</em></h2>
-              <p>Today stays short on purpose. The rest of the backlog can wait in Next or Later.</p>
+              <span className={s.heroKicker}>Morning note</span>
+              <h2>Enough for <em>today.</em></h2>
+              <p>A short list for the things you actually want in front of you. Next and Later stay off the table until you need them.</p>
             </div>
 
             <div className={s.heroStats} aria-label="Daily summary">
