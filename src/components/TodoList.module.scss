@@ -2567,3 +2567,268 @@
     box-shadow: none;
   }
 }
+
+
+/* More expressive hover feedback — still tactile, not flashy. */
+
+.hero,
+.captureCard,
+.focusPanel,
+.hero::before,
+.focusPanel::before,
+.captureCard::before,
+.primaryButton svg,
+.focusAction svg,
+.ghostButton svg,
+.navButton svg,
+.iconButton svg,
+.iconButtonActive svg,
+.searchBox,
+.taskTitleButton {
+  transition:
+    transform var(--duration-ui) var(--ease-out),
+    background-color var(--duration-ui) var(--ease-soft),
+    border-color var(--duration-ui) var(--ease-soft),
+    color var(--duration-ui) var(--ease-soft),
+    box-shadow var(--duration-ui) var(--ease-soft),
+    opacity var(--duration-fast) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand:hover .brandMark {
+    transform: translate(-1px, -1px) rotate(-2deg);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .brand:hover .brandMark::before {
+    transform: rotate(45deg) scale(1.04);
+  }
+
+  .brand:hover .brandMark::after {
+    transform: rotate(-45deg) scale(1.04);
+  }
+
+  .navButton:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(36, 48, 44, .30);
+  }
+
+  .navButton:hover svg {
+    transform: rotate(-7deg) scale(1.08);
+  }
+
+  .navButtonActive:hover {
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .sidebarNav .navButton:nth-of-type(1):hover {
+    background: #ffe68a;
+  }
+
+  .sidebarNav .navButton:nth-of-type(2):hover {
+    background: #efb5c6;
+  }
+
+  .sidebarNav .navButton:nth-of-type(3):hover {
+    background: #b5dfec;
+  }
+
+  .sidebarNav .navButton:nth-of-type(4):hover {
+    background: #bbd8b6;
+  }
+
+  .searchBox:hover {
+    border-color: #527585;
+    box-shadow:
+      inset 2px 2px 0 rgba(78, 66, 52, .05),
+      3px 3px 0 #b9dfe9;
+    transform: translateY(-1px);
+  }
+
+  .hero:hover {
+    transform: rotate(.02deg) translate(-2px, -2px);
+    box-shadow:
+      7px 7px 0 rgba(64, 59, 52, .18),
+      12px 12px 0 rgba(244, 201, 93, .20);
+  }
+
+  .hero:hover::before {
+    transform: rotate(1.5deg) translateY(-1px);
+  }
+
+  .hero:hover h2 em::after {
+    transform: rotate(1deg) scaleX(1.04);
+  }
+
+  .captureCard:hover {
+    transform: translate(-2px, -2px) rotate(.08deg);
+    box-shadow:
+      6px 6px 0 rgba(74, 62, 47, .15),
+      10px 10px 0 rgba(244, 201, 93, .13);
+  }
+
+  .captureCard:hover::before {
+    transform: rotate(14deg) translate(1px, -1px);
+  }
+
+  .captureInputWrap:hover {
+    border-color: #6f695f;
+    background: #fffefa;
+  }
+
+  .compactField:hover {
+    border-color: #5f6661;
+    transform: translateY(-1px);
+  }
+
+  .primaryButton:not(:disabled):hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .primaryButton:not(:disabled):hover svg {
+    transform: translate(2px, -2px) rotate(-6deg);
+  }
+
+  .taskCard:hover {
+    transform: translateX(4px);
+    background: rgba(255, 239, 183, .42);
+  }
+
+  .taskCard:hover .taskTitle {
+    color: #202925;
+  }
+
+  .taskTitleButton:hover {
+    transform: translateX(1px);
+  }
+
+  .checkControl input:hover {
+    border-color: #4f5e57;
+    box-shadow:
+      2px 2px 0 rgba(42, 48, 44, .18),
+      0 0 0 3px rgba(158, 190, 154, .18);
+  }
+
+  .iconButton:hover {
+    transform: translate(-1px, -2px) rotate(-2deg);
+    box-shadow: 3px 3px 0 rgba(36, 48, 44, .22);
+  }
+
+  .iconButton:hover svg {
+    transform: scale(1.08);
+  }
+
+  .iconButtonActive:hover {
+    transform: translate(-1px, -2px) rotate(2deg);
+    box-shadow: 3px 3px 0 rgba(76, 46, 55, .34);
+  }
+
+  .iconButtonActive:hover svg {
+    transform: rotate(10deg) scale(1.12);
+  }
+
+  .dangerButton:hover {
+    transform: translate(-1px, -2px) rotate(-3deg);
+    box-shadow: 3px 3px 0 rgba(109, 39, 34, .30);
+  }
+
+  .emptyIcon:hover {
+    transform: rotate(-4deg) scale(1.04);
+  }
+
+  .ghostButton:hover {
+    transform: translate(-2px, -2px);
+    border-color: var(--ink);
+    background: #9fcfdf;
+    color: #24302c;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .ghostButton:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  .focusPanel:hover {
+    transform: rotate(-.06deg) translate(-2px, -2px);
+    box-shadow:
+      7px 8px 0 rgba(53, 74, 62, .22),
+      12px 13px 0 rgba(158, 190, 154, .16);
+  }
+
+  .focusPanel:hover::before {
+    transform: translateX(-50%) rotate(2deg) translateY(-1px);
+  }
+
+  .nextTask:hover {
+    background: rgba(255, 255, 255, .14);
+  }
+
+  .nextTask:hover .nextTaskIcon {
+    transform: rotate(-8deg) scale(1.10);
+  }
+
+  .focusAction:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .focusAction:hover svg {
+    transform: rotate(-8deg) scale(1.08);
+  }
+
+  .focusEmpty button:hover {
+    color: #8e4f63;
+    text-decoration-color: currentColor;
+    transform: translateX(2px);
+  }
+
+  .clearButton:hover {
+    color: #a53e39;
+    transform: translateX(-2px);
+  }
+
+  .toast button:hover {
+    transform: translate(-1px, -1px);
+    background: #ffe887;
+    box-shadow: 2px 2px 0 #161a18;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .captureCard,
+  .focusPanel,
+  .hero::before,
+  .focusPanel::before,
+  .captureCard::before,
+  .brandMark,
+  .brandMark::before,
+  .brandMark::after,
+  .navButton,
+  .navButton svg,
+  .searchBox,
+  .compactField,
+  .primaryButton,
+  .primaryButton svg,
+  .taskCard,
+  .taskTitleButton,
+  .checkControl input,
+  .iconButton,
+  .iconButton svg,
+  .iconButtonActive,
+  .iconButtonActive svg,
+  .dangerButton,
+  .ghostButton,
+  .ghostButton svg,
+  .nextTask,
+  .nextTaskIcon,
+  .focusAction,
+  .focusAction svg,
+  .focusEmpty button,
+  .clearButton,
+  .toast button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
