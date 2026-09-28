@@ -1956,3 +1956,211 @@
     display: none;
   }
 }
+
+
+/* Cheerful Nordic colour layer */
+
+.topbar {
+  border-bottom-color: color-mix(in oklab, var(--sky) 34%, var(--line-strong));
+}
+
+.brandMark {
+  background: var(--sun-soft);
+  border-color: color-mix(in oklab, var(--ink) 88%, transparent);
+}
+
+.brandMark::before,
+.brandMark::after {
+  border-color: var(--accent);
+}
+
+.systemStatus i {
+  background: var(--success);
+}
+
+.sidebarIntro::after {
+  background: var(--berry);
+}
+
+.navButtonActive {
+  border-left-color: var(--accent);
+  background: color-mix(in oklab, var(--sky-soft) 58%, var(--accent-soft));
+}
+
+.hero {
+  background: linear-gradient(135deg, #fff6cf 0%, #fff1c2 68%, #ffe9d6 100%);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--ink) 7%, transparent),
+    4px 6px 0 color-mix(in oklab, var(--sun) 14%, transparent);
+}
+
+.hero::before {
+  background: color-mix(in oklab, var(--sky-soft) 74%, white);
+  border-color: color-mix(in oklab, var(--sky) 28%, transparent);
+}
+
+.hero h2 em {
+  color: var(--focus);
+}
+
+.hero h2 em::after {
+  background: var(--accent);
+}
+
+.heroStats article:nth-child(1) strong {
+  color: var(--accent-dark);
+}
+
+.heroStats article:nth-child(2) strong {
+  color: #3f7891;
+}
+
+.heroStats article:nth-child(3) strong {
+  color: var(--focus);
+}
+
+.captureCard {
+  border-color: color-mix(in oklab, var(--sun) 52%, var(--line));
+  background: linear-gradient(145deg, #fff6d8 0%, #fff9ea 100%);
+}
+
+.captureCard::before {
+  border-color: color-mix(in oklab, var(--berry) 52%, var(--line-strong));
+}
+
+.captureInputWrap {
+  border-color: color-mix(in oklab, var(--sun) 42%, var(--line-strong));
+  background: rgba(255, 253, 247, .94);
+}
+
+.compactField {
+  border-color: color-mix(in oklab, var(--sky) 35%, var(--line));
+  background: color-mix(in oklab, var(--sky-soft) 24%, transparent);
+}
+
+.primaryButton {
+  background: var(--accent);
+  color: white;
+}
+
+.primaryButton:not(:disabled):hover {
+  background: var(--accent-dark);
+}
+
+.listSection {
+  border-color: color-mix(in oklab, var(--sky) 32%, var(--line-strong));
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 43px,
+      color-mix(in oklab, var(--accent) 18%, transparent) 44px,
+      transparent 45px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #fffdf8 0,
+      #fffdf8 43px,
+      color-mix(in oklab, var(--sky) 18%, transparent) 44px,
+      #fffdf8 45px
+    );
+}
+
+.listHeading {
+  background: rgba(255, 253, 248, .90);
+}
+
+.taskCardFocus {
+  background: color-mix(in oklab, var(--berry-soft) 46%, #fffdf8);
+  box-shadow: inset 3px 0 0 var(--berry);
+}
+
+.iconButtonActive {
+  color: #9d526a;
+}
+
+.iconButtonActive svg {
+  fill: var(--berry);
+}
+
+.emptyIcon {
+  border-color: color-mix(in oklab, var(--sky) 50%, var(--line-strong));
+  background: var(--sky-soft);
+  color: #3d738b;
+}
+
+.focusPanel {
+  border-color: color-mix(in oklab, var(--sage) 56%, var(--line-strong));
+  background: linear-gradient(160deg, #e6f0df 0%, #d7e8d5 100%);
+  color: #24372f;
+  box-shadow:
+    0 1px 0 rgba(42, 53, 47, .10),
+    5px 7px 0 color-mix(in oklab, var(--sage) 13%, transparent);
+}
+
+.focusPanel::before {
+  background: color-mix(in oklab, var(--sun-soft) 82%, white);
+  border-color: color-mix(in oklab, var(--sun) 34%, transparent);
+}
+
+.focusPanel .eyebrow {
+  color: #8f5367;
+}
+
+.progressOrb {
+  border-color: color-mix(in oklab, var(--sage) 62%, #6b776f);
+  background:
+    radial-gradient(circle at center, #dfead9 58%, transparent 60%),
+    conic-gradient(var(--accent) var(--progress), color-mix(in oklab, var(--sage) 45%, white) 0deg);
+}
+
+.nextTask {
+  border-top-color: color-mix(in oklab, var(--sage) 58%, #7a8c80);
+  border-bottom-color: color-mix(in oklab, var(--sage) 58%, #7a8c80);
+}
+
+.nextTaskIcon {
+  background: var(--berry);
+}
+
+.nextTaskLabel,
+.focusStack span {
+  color: #95566a;
+}
+
+.focusAction {
+  border-color: var(--focus);
+  background: var(--focus);
+}
+
+.focusAction:hover {
+  background: #28483d;
+}
+
+.toast {
+  border-color: color-mix(in oklab, var(--berry) 42%, #514943);
+  background: #3a3531;
+}
+
+.mobileNav {
+  border-color: color-mix(in oklab, var(--sky) 38%, var(--line-strong));
+  background: #fff9ec;
+}
+
+.mobileNav .mobileNavActive {
+  background: var(--focus);
+}
+
+@media (max-width: 430px) {
+  .listSection {
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 28px,
+        color-mix(in oklab, var(--accent) 16%, transparent) 29px,
+        transparent 30px
+      ),
+      #fffdf8;
+  }
+}
