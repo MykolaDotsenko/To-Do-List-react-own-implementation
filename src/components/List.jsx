@@ -3,10 +3,10 @@ import { TodoCard } from './TodoCard'
 import s from './TodoList.module.scss'
 
 const copy = {
-  today: ['Today', 'Tasks scheduled for today.'],
-  focus: ['Top 3', 'Your protected priorities.'],
-  all: ['All tasks', 'Everything you have captured.'],
-  completed: ['Done', 'Completed tasks.'],
+  today: ['Today', 'What is already on the table.'],
+  focus: ['Pinned', 'The three things you chose to keep in sight.'],
+  all: ['Everything', 'The full drawer, when you need it.'],
+  completed: ['Done', 'Things you can stop carrying around.'],
 }
 
 export const List = ({ tasks, view, focusCount, onCaptureFocus, ...handlers }) => {
@@ -16,7 +16,7 @@ export const List = ({ tasks, view, focusCount, onCaptureFocus, ...handlers }) =
     <section className={s.listSection} aria-labelledby="task-list-title">
       <div className={s.listHeading}>
         <div>
-          <span className={s.eyebrow}>List</span>
+          <span className={s.eyebrow}>Notebook</span>
           <h2 id="task-list-title">{title}</h2>
           <p>{subtitle}</p>
         </div>
@@ -37,8 +37,8 @@ export const List = ({ tasks, view, focusCount, onCaptureFocus, ...handlers }) =
       ) : (
         <div className={s.emptyState}>
           <div className={s.emptyIcon}><FiCheckCircle aria-hidden="true" /></div>
-          <h3>No tasks here.</h3>
-          <p>Add a task or switch to another view.</p>
+          <h3>Nothing on this page.</h3>
+          <p>Jot something down, or turn to another page.</p>
           <button type="button" className={s.ghostButton} onClick={onCaptureFocus}>
             Add a task <FiArrowUpRight aria-hidden="true" />
           </button>
