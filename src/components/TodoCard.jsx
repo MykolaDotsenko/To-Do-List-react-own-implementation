@@ -101,7 +101,7 @@ export const TodoCard = ({
           disabled={!canPin && !item.favorite}
           aria-pressed={item.favorite}
           aria-label={item.favorite ? `Remove ${item.title} from Top 3` : `Add ${item.title} to Top 3`}
-          title={!canPin && !item.favorite ? 'Top 3 is full' : 'Toggle Top 3'}
+          title={!canPin && !item.favorite ? 'Top 3 is full — finish or remove one first' : item.favorite ? 'Remove from Top 3' : 'Add to Top 3'}
         >
           <FiStar aria-hidden="true" />
         </button>
