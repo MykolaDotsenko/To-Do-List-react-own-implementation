@@ -76,13 +76,22 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: .18;
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 31px,
-    color-mix(in oklab, var(--ink) 4%, transparent) 32px
-  );
+  opacity: .38;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(70, 61, 49, .018) 0,
+      rgba(70, 61, 49, .018) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .20) 0,
+      rgba(255, 255, 255, .20) 1px,
+      transparent 1px,
+      transparent 5px
+    );
 }
 
 button,
