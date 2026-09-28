@@ -7,34 +7,34 @@ export const FocusPanel = ({ stack, progress, onComplete, onOpenFocus }) => {
   return (
     <aside className={s.focusPanel} aria-labelledby="focus-panel-title">
       <div className={s.focusPanelTop}>
-        <span className={s.eyebrow}>Focus orbit</span>
+        <span className={s.eyebrow}>Top 3</span>
         <div className={s.progressOrb} style={{ '--progress': `${progress * 3.6}deg` }} aria-label={`${progress}% complete`}>
           <span>{progress}</span>
           <small>%</small>
         </div>
       </div>
 
-      <h2 id="focus-panel-title">Your next clear move.</h2>
+      <h2 id="focus-panel-title">Next up</h2>
 
       {next ? (
         <>
           <div className={s.nextTask}>
             <div className={s.nextTaskIcon}><FiZap aria-hidden="true" /></div>
-            <span className={s.nextTaskLabel}>Start here</span>
+            <span className={s.nextTaskLabel}>First</span>
             <strong>{next.title}</strong>
             <span className={s.nextTaskMeta}><FiClock aria-hidden="true" /> {next.estimate} min · {next.bucket}</span>
           </div>
 
           <button type="button" className={s.focusAction} onClick={() => onComplete(next.id)}>
-            Complete & continue <FiCheck aria-hidden="true" />
+            Done — next <FiCheck aria-hidden="true" />
           </button>
         </>
       ) : (
         <div className={s.focusEmpty}>
           <FiStar aria-hidden="true" />
-          <strong>Choose up to three priorities.</strong>
-          <p>Star the tasks that deserve protected attention today.</p>
-          <button type="button" onClick={onOpenFocus}>Open task stream <FiArrowRight aria-hidden="true" /></button>
+          <strong>No focus tasks yet.</strong>
+          <p>Star up to three tasks to keep them here.</p>
+          <button type="button" onClick={onOpenFocus}>Open all tasks <FiArrowRight aria-hidden="true" /></button>
         </div>
       )}
 
@@ -50,8 +50,8 @@ export const FocusPanel = ({ stack, progress, onComplete, onOpenFocus }) => {
       )}
 
       <div className={s.focusHint}>
-        <span>Top 3 is deliberately capped.</span>
-        <span>Constraint creates focus.</span>
+        <span>3 slots maximum.</span>
+        <span>Finish or remove one before adding another.</span>
       </div>
     </aside>
   )
