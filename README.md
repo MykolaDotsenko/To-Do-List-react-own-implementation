@@ -4,7 +4,7 @@
 
 **A local-first daily focus workspace that turns a basic Todo exercise into a polished product and frontend architecture case study.**
 
-**Live demo:** https://todo-list-pi-three-67.vercel.app/
+**Live demo:** https://orbit-daily-focus.vercel.app/
 
 Orbit is designed around one small loop:
 
