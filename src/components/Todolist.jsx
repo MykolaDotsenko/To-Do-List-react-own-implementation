@@ -163,7 +163,7 @@ export const Todolist = () => {
 
           {!storageHealthy && (
             <div className={s.warningBanner} role="status">
-              Browser storage is unavailable. Orbit will keep working for this session, but changes may not survive a reload.
+              Local storage is blocked. You can keep working, but these changes will disappear after a reload.
             </div>
           )}
 
@@ -212,7 +212,7 @@ export const Todolist = () => {
 
       {undoTask && (
         <div className={s.toast} role="status">
-          <span><FiCheck aria-hidden="true" /> Task removed</span>
+          <span><FiCheck aria-hidden="true" /> Deleted</span>
           <button type="button" onClick={handleUndo}><FiRotateCcw aria-hidden="true" /> Undo</button>
         </div>
       )}
