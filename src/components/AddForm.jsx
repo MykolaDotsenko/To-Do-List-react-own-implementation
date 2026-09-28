@@ -28,8 +28,8 @@ export const AddForm = ({ onAdd, inputRef }) => {
     <section className={s.captureCard} aria-labelledby="capture-title">
       <div className={s.captureHeading}>
         <div>
-          <span className={s.eyebrow}>New task</span>
-          <h2 id="capture-title">Write it down.</h2>
+          <span className={s.eyebrow}>Jot it down</span>
+          <h2 id="capture-title">What should stay on the table?</h2>
         </div>
         <span className={s.shortcut} aria-hidden="true">N</span>
       </div>
@@ -43,7 +43,7 @@ export const AddForm = ({ onAdd, inputRef }) => {
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             maxLength={160}
-            placeholder="Task name"
+            placeholder="Call Mum, book the dentist, finish the draft…"
             aria-label="New task"
             autoComplete="off"
           />
@@ -69,7 +69,7 @@ export const AddForm = ({ onAdd, inputRef }) => {
           </label>
 
           <button className={s.primaryButton} type="submit" disabled={!title.trim()}>
-            Add task
+            Keep this
             <FiArrowUpRight aria-hidden="true" />
           </button>
         </div>
