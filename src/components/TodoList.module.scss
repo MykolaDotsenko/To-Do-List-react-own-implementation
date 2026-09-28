@@ -1190,3 +1190,299 @@
     color: CanvasText;
   }
 }
+
+
+/* Nordic premium interaction layer */
+
+@property --progress {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.topbar {
+  background: color-mix(in oklab, var(--page) 94%, transparent);
+}
+
+.brandMark,
+.navButton,
+.searchBox,
+.captureInputWrap,
+.compactField,
+.primaryButton,
+.taskCard,
+.iconButton,
+.iconButtonActive,
+.ghostButton,
+.focusAction,
+.mobileNav button,
+.toast button {
+  transition:
+    background-color var(--duration-ui) var(--ease-soft),
+    border-color var(--duration-ui) var(--ease-soft),
+    color var(--duration-ui) var(--ease-soft),
+    box-shadow var(--duration-ui) var(--ease-soft),
+    opacity var(--duration-fast) ease,
+    transform var(--duration-ui) var(--ease-out);
+}
+
+.brandMark {
+  border-color: color-mix(in oklab, var(--ink) 88%, transparent);
+}
+
+.brandMark::before,
+.brandMark::after {
+  transition: transform var(--duration-move) var(--ease-out);
+}
+
+.brand:hover .brandMark::before {
+  transform: rotate(38deg);
+}
+
+.brand:hover .brandMark::after {
+  transform: rotate(-38deg);
+}
+
+.systemStatus i {
+  background: var(--success);
+}
+
+.sidebarIntro h1,
+.hero h2,
+.focusPanel h2,
+.emptyState h3 {
+  font-family: var(--display-font);
+}
+
+.eyebrow,
+.heroKicker,
+.navLabel,
+.brand small,
+.systemStatus,
+.navCount,
+.resultCount,
+.taskMeta select,
+.focusStack span,
+.focusHint {
+  font-family: var(--mono-font);
+}
+
+.navButtonActive {
+  background: color-mix(in oklab, var(--accent-soft) 78%, var(--paper));
+}
+
+.searchBox:focus-within {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 13%, transparent);
+}
+
+.captureCard,
+.listSection {
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--ink) 5%, transparent);
+}
+
+.captureInputWrap:focus-within {
+  border-color: var(--ink);
+  box-shadow:
+    inset 3px 0 0 var(--accent),
+    0 0 0 3px color-mix(in oklab, var(--accent) 10%, transparent);
+}
+
+.compactField:focus-within {
+  border-color: var(--line-strong);
+  background: color-mix(in oklab, var(--paper-strong) 72%, var(--page));
+}
+
+.primaryButton,
+.focusAction {
+  box-shadow: 0 1px 0 color-mix(in oklab, black 18%, transparent);
+}
+
+.primaryButton:active,
+.focusAction:active,
+.ghostButton:active,
+.iconButton:active,
+.iconButtonActive:active,
+.toast button:active {
+  transform: translateY(1px) scale(.985);
+}
+
+.taskCard {
+  position: relative;
+}
+
+.taskCard::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: color-mix(in oklab, var(--ink) 5%, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-move) var(--ease-out);
+}
+
+.taskCard:focus-within::after {
+  transform: scaleX(1);
+}
+
+.taskActions {
+  opacity: .58;
+  transition: opacity var(--duration-ui) ease;
+}
+
+.taskCard:focus-within .taskActions,
+.taskCardFocus .taskActions {
+  opacity: 1;
+}
+
+.checkControl input {
+  transition:
+    background-color var(--duration-ui) var(--ease-soft),
+    border-color var(--duration-ui) var(--ease-soft),
+    box-shadow var(--duration-ui) var(--ease-soft);
+}
+
+.checkControl input::after {
+  opacity: 0;
+  transform: rotate(-45deg) translateY(-1px) scale(.55);
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-ui) var(--ease-out);
+}
+
+.checkControl input:checked::after {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(-1px) scale(1);
+}
+
+.taskCardFocus {
+  background: color-mix(in oklab, var(--accent-soft) 50%, var(--paper));
+}
+
+.focusPanel {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--focus) 96%, white) 0%,
+      var(--focus) 100%
+    );
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 7%, transparent),
+    0 12px 32px color-mix(in oklab, var(--focus) 14%, transparent);
+}
+
+.progressOrb {
+  transition: --progress 480ms var(--ease-out);
+}
+
+.nextTask {
+  background: color-mix(in oklab, var(--focus-raised) 94%, black);
+}
+
+.nextTaskIcon {
+  transition:
+    transform var(--duration-ui) var(--ease-out),
+    background-color var(--duration-ui) var(--ease-soft);
+}
+
+.focusAction:hover + .nextTaskIcon {
+  transform: none;
+}
+
+.focusEmpty button {
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, currentColor 55%, transparent);
+  transition:
+    color var(--duration-ui) ease,
+    text-decoration-color var(--duration-ui) ease;
+}
+
+.warningBanner,
+.toast {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--duration-ui) ease,
+    transform var(--duration-move) var(--ease-out);
+}
+
+@starting-style {
+  .warningBanner {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  .toast {
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+}
+
+.mobileNav {
+  box-shadow: 0 8px 24px color-mix(in oklab, var(--ink) 8%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navButton:hover {
+    transform: translateX(2px);
+  }
+
+  .primaryButton:not(:disabled):hover,
+  .focusAction:hover {
+    transform: translateY(-1px);
+  }
+
+  .ghostButton:hover {
+    transform: translateY(-1px);
+  }
+
+  .taskCard:hover::after {
+    transform: scaleX(1);
+  }
+
+  .taskCard:hover .taskActions {
+    opacity: 1;
+  }
+
+  .iconButton:hover,
+  .iconButtonActive:hover {
+    transform: translateY(-1px);
+  }
+
+  .nextTask:hover .nextTaskIcon {
+    transform: rotate(-4deg) scale(1.04);
+  }
+
+  .toast button:hover {
+    background: color-mix(in oklab, white 10%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandMark,
+  .brandMark::before,
+  .brandMark::after,
+  .navButton,
+  .searchBox,
+  .captureInputWrap,
+  .compactField,
+  .primaryButton,
+  .taskCard,
+  .taskCard::after,
+  .taskActions,
+  .iconButton,
+  .iconButtonActive,
+  .ghostButton,
+  .focusAction,
+  .progressOrb,
+  .nextTaskIcon,
+  .warningBanner,
+  .toast,
+  .mobileNav button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
