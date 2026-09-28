@@ -4,7 +4,7 @@
 
 **A local-first daily focus workspace that turns a basic Todo exercise into a polished product and frontend architecture case study.**
 
-**GitHub Pages target:** https://mykoladotsenko.github.io/To-Do-List-react-own-implementation/
+**Live demo:** https://todo-list-pi-three-67.vercel.app/
 
 Orbit is designed around one small loop:
 
