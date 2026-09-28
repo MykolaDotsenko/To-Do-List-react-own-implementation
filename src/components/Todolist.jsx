@@ -106,20 +106,20 @@ export const Todolist = () => {
       <header className={s.topbar}>
         <a className={s.brand} href="#main-content" aria-label="Orbit home">
           <span className={s.brandMark} aria-hidden="true"><span /></span>
-          <span><strong>Orbit</strong><small>Daily Focus OS</small></span>
+          <span><strong>Orbit</strong><small>daily focus</small></span>
         </a>
         <div className={s.topbarMeta}>
           <span>{formattedDate}</span>
-          <span className={s.systemStatus}><i /> Local-first</span>
+          <span className={s.systemStatus}><i /> stored locally</span>
         </div>
       </header>
 
       <div className={s.layout}>
         <aside className={s.sidebar}>
           <div className={s.sidebarIntro}>
-            <span className={s.eyebrow}>Command center</span>
-            <h1>Make today feel lighter.</h1>
-            <p>Capture everything. Protect only what matters now.</p>
+            <span className={s.eyebrow}>Today</span>
+            <h1>Three things in front of you.</h1>
+            <p>Keep everything else close, but out of the way.</p>
           </div>
 
           <Filter
@@ -132,27 +132,27 @@ export const Todolist = () => {
           />
 
           <div className={s.sidebarFooter}>
-            <span><FiCommand aria-hidden="true" /> Shortcuts</span>
-            <p><kbd>N</kbd> capture · <kbd>/</kbd> search</p>
+            <span><FiCommand aria-hidden="true" /> Keyboard</span>
+            <p><kbd>N</kbd> new · <kbd>/</kbd> search</p>
           </div>
         </aside>
 
         <main id="main-content" className={s.mainColumn}>
           <section className={s.hero}>
             <div>
-              <span className={s.heroKicker}>A calmer operating system for your day</span>
-              <h2>Move from <em>busy</em> to <span>clear.</span></h2>
-              <p>Orbit keeps the backlog quiet and the next meaningful action obvious.</p>
+              <span className={s.heroKicker}>Daily sheet</span>
+              <h2>Pick three. <em>Do one.</em></h2>
+              <p>Today stays short on purpose. The rest of the backlog can wait in Next or Later.</p>
             </div>
 
             <div className={s.heroStats} aria-label="Daily summary">
               <article>
                 <strong>{stats.today}</strong>
-                <span>today</span>
+                <span>tasks today</span>
               </article>
               <article>
                 <strong>{stats.minutes}</strong>
-                <span>min planned</span>
+                <span>planned minutes</span>
               </article>
               <article>
                 <strong>{stats.focus}/3</strong>
