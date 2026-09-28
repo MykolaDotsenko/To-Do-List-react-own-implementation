@@ -7,33 +7,33 @@ export const FocusPanel = ({ stack, progress, onComplete, onOpenFocus }) => {
   return (
     <aside className={s.focusPanel} aria-labelledby="focus-panel-title">
       <div className={s.focusPanelTop}>
-        <span className={s.eyebrow}>Top 3</span>
+        <span className={s.eyebrow}>Pinned for today</span>
         <div className={s.progressOrb} style={{ '--progress': `${progress * 3.6}deg` }} aria-label={`${progress}% complete`}>
           <span>{progress}</span>
           <small>%</small>
         </div>
       </div>
 
-      <h2 id="focus-panel-title">Next up</h2>
+      <h2 id="focus-panel-title">The three that stay visible.</h2>
 
       {next ? (
         <>
           <div className={s.nextTask}>
             <div className={s.nextTaskIcon}><FiZap aria-hidden="true" /></div>
-            <span className={s.nextTaskLabel}>First</span>
+            <span className={s.nextTaskLabel}>Start here</span>
             <strong>{next.title}</strong>
             <span className={s.nextTaskMeta}><FiClock aria-hidden="true" /> {next.estimate} min · {next.bucket}</span>
           </div>
 
           <button type="button" className={s.focusAction} onClick={() => onComplete(next.id)}>
-            Mark done <FiCheck aria-hidden="true" />
+            Done for now <FiCheck aria-hidden="true" />
           </button>
         </>
       ) : (
         <div className={s.focusEmpty}>
           <FiStar aria-hidden="true" />
-          <strong>Top 3 is empty.</strong>
-          <p>Star up to three tasks. They stay here until you finish or remove them.</p>
+          <strong>Nothing pinned yet.</strong>
+          <p>Star up to three tasks and keep them in sight for today.</p>
           <button type="button" onClick={onOpenFocus}>Open all tasks <FiArrowRight aria-hidden="true" /></button>
         </div>
       )}
@@ -50,8 +50,8 @@ export const FocusPanel = ({ stack, progress, onComplete, onOpenFocus }) => {
       )}
 
       <div className={s.focusHint}>
-        <span>Three slots, no overflow.</span>
-        <span>Finish or remove one before adding another.</span>
+        <span>Three pins, no fourth.</span>
+        <span>Clear one before pinning something else.</span>
       </div>
     </aside>
   )
