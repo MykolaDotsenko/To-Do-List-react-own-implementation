@@ -11,7 +11,7 @@ const views = [
 export const Filter = ({ view, onViewChange, query, onQueryChange, counts, searchRef }) => (
   <>
     <nav className={s.sidebarNav} aria-label="Task views">
-      <div className={s.navLabel}>Workspace</div>
+      <div className={s.navLabel}>Views</div>
       {views.map(({ id, label, icon: Icon }) => (
         <button
           key={id}
