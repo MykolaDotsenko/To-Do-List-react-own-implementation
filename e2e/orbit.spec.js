@@ -9,8 +9,8 @@ test.beforeEach(async ({ page }) => {
 async function addTask(page, title, { bucket = 'today', estimate = '15' } = {}) {
   await page.getByLabel('New task').fill(title)
   await page.getByLabel('When').selectOption(bucket)
-  await page.getByLabel(/Effort/).selectOption(estimate)
-  await page.getByRole('button', { name: 'Add to orbit' }).click()
+  await page.getByLabel('Time').selectOption(estimate)
+  await page.getByRole('button', { name: 'Keep this' }).click()
 }
 
 test('capture → Top 3 → complete → reopen keeps the workflow coherent', async ({ page }) => {
@@ -22,7 +22,7 @@ test('capture → Top 3 → complete → reopen keeps the workflow coherent', as
   await expect(page.getByRole('button', { name: 'Remove Ship portfolio case study from Top 3' })).toBeVisible()
   await expect(page.getByText('Start here')).toBeVisible()
 
-  await page.getByRole('button', { name: 'Complete & continue' }).click()
+  await page.getByRole('button', { name: 'Done for now' }).click()
   await expect(page.getByRole('button', { name: 'Done' })).toContainText('1')
 
   await page.getByRole('button', { name: 'Done' }).click()
@@ -49,7 +49,7 @@ test('deletion is recoverable and persistence survives reload', async ({ page })
   await addTask(page, 'Recoverable task')
   await page.getByRole('button', { name: 'Delete Recoverable task' }).click()
 
-  await expect(page.getByText('Task removed')).toBeVisible()
+  await expect(page.getByText('Task deleted')).toBeVisible()
   await page.getByRole('button', { name: /Undo/ }).click()
   await expect(page.getByText('Recoverable task').first()).toBeVisible()
 
@@ -81,7 +81,7 @@ test('blocked storage degrades to an explicit session-only experience', async ({
 
   await page.reload()
 
-  await expect(page.getByText(/Browser storage is unavailable/)).toBeVisible()
+  await expect(page.getByText(/Local storage is blocked/)).toBeVisible()
   await addTask(page, 'Session-only task')
   await expect(page.getByText('Session-only task').first()).toBeVisible()
 })
@@ -97,5 +97,5 @@ test('mobile workflow has no horizontal overflow and keeps thumb navigation visi
   expect(overflow).toBeLessThanOrEqual(1)
 
   await mobileNav.getByRole('button', { name: /Top 3$/ }).click()
-  await expect(page.getByText('Nothing is asking for attention here.')).toBeVisible()
+  await expect(page.getByText('Nothing on this page.')).toBeVisible()
 })
