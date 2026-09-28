@@ -1388,10 +1388,6 @@
     background-color var(--duration-ui) var(--ease-soft);
 }
 
-.focusAction:hover + .nextTaskIcon {
-  transform: none;
-}
-
 .focusEmpty button {
   text-decoration-thickness: 1px;
   text-decoration-color: color-mix(in oklab, currentColor 55%, transparent);
@@ -1484,5 +1480,43 @@
   .mobileNav button {
     transition: none !important;
     transform: none !important;
+  }
+}
+
+
+.warningBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.warningBanner::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  margin-top: .38em;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.iconButtonActive svg {
+  fill: currentColor;
+}
+
+@media (prefers-contrast: more) {
+  .captureCard,
+  .listSection,
+  .searchBox,
+  .captureInputWrap,
+  .compactField,
+  .taskCard,
+  .focusPanel,
+  .mobileNav {
+    border-color: currentColor;
+  }
+
+  .taskCardFocus {
+    box-shadow: inset 5px 0 0 var(--accent);
   }
 }
